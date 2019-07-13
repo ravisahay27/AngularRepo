@@ -1,0 +1,31 @@
+<div class="card" style="background-color: cornflowerblue">
+
+  <h4>Parent Component</h4>
+  <div class="card-body">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm) " >
+      <div clas="row ">
+      <div>
+        Name: <input name="name" ngModel required #userName="ngModel">
+      </div>
+      <div>
+        City: <input name="city" ngModel #userCity="ngModel">
+      </div>
+      <div>
+        <button>Submit</button>
+
+      </div>
+
+    </div>
+    </form>
+
+    <h4>{{message.name}} from {{message.city}}
+
+
+    </h4>
+    <app-child [personDetails]="personDetails" (sendmessage)="message=$event"></app-child>
+
+
+  </div>
+</div>
+
+
